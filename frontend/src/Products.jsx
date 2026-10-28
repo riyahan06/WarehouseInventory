@@ -15,6 +15,8 @@ function Products({ role = "Viewer" }) {
   const isAdmin = role === "Admin";
   const isWarehouseStaff = role === "Warehouse Staff";
   const canManageProducts = isAdmin || isWarehouseStaff;
+  console.log("Products role:", role);
+console.log("Can manage products:", canManageProducts);
 
   // Fetch products from the backend
   useEffect(() => {
