@@ -1,5 +1,4 @@
-const API_URL = (
-  import.meta.env.VITE_API_URL || "http://localhost:5000"
-).replace(/\/+$/, "");
+
+const API_URL = "https://warehouse-inventory-api-5nnn.onrender.com";
 
 export default API_URL;
