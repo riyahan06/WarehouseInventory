@@ -221,6 +221,8 @@ function App() {
   });
 
   const role = authUser?.role || "";
+  console.log("App authUser:", authUser);
+console.log("App role:", role);
   const isAdmin = role === "Admin";
   const isWarehouseStaff = role === "Warehouse Staff";
   const canOperateWarehouse = isAdmin || isWarehouseStaff;
@@ -459,23 +461,23 @@ function App() {
 
   const renderPage = () => {
     if (page === "products") {
-      return <Products />;
+      return <Products role={role} />;
     }
 
     if (page === "inventory") {
-      return <Inventory />;
+      return <Inventory role={role} />;
     }
 
     if (page === "storage") {
-      return <Storage />;
+      return <Storage role={role} />;
     }
 
     if (page === "movement") {
-      return <StockMovement />;
+      return <StockMovement role={role} />;
     }
 
     if (page === "dispatch") {
-      return <Dispatch />;
+      return <Dispatch role={role} />;
     }
 
     /* USERS — ADMIN ONLY */
@@ -504,7 +506,7 @@ function App() {
         );
       }
 
-      return <Users />;
+      return <Users role={role} />;
     }
 
     /* SETTINGS */
